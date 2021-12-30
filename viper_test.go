@@ -30,7 +30,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/vuuvv/mapstructure"
 
-	"github.com/spf13/viper/internal/testutil"
+	"github.com/vuuvv/viper/internal/testutil"
 )
 
 var yamlExample = []byte(`Hacker: true
