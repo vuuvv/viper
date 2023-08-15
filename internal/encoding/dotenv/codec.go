@@ -41,14 +41,15 @@ func (Codec) Encode(v map[string]interface{}) ([]byte, error) {
 }
 
 func (Codec) Decode(b []byte, v map[string]interface{}) error {
-	var buf bytes.Buffer
+	// var buf bytes.Buffer
 
-	_, err := buf.Write(b)
-	if err != nil {
-		return err
-	}
+	// _, err := buf.Write(b)
+	// if err != nil {
+	// 	return err
+	// }
+	var buf = bytes.NewReader(b)
 
-	env, err := gotenv.StrictParse(&buf)
+	env, err := gotenv.StrictParse(buf)
 	if err != nil {
 		return err
 	}
